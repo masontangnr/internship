@@ -7,20 +7,835 @@
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		/>
 
-		<title>reveal.js</title>
+		<title>Entrepreneurship · Studio Kairos Internship</title>
 
 		<link rel="stylesheet" href="dist/reset.css" />
 		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/black.css" />
+		<link rel="stylesheet" href="dist/theme/sky.css" />
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+		<style>
+			:root {
+				--kairos-accent: #2a76dd;
+				--kairos-ink: #333;
+			}
+			.reveal h1,
+			.reveal h2,
+			.reveal h3 {
+				letter-spacing: -0.01em;
+			}
+			.reveal .subtitle {
+				color: var(--kairos-accent);
+				font-weight: 600;
+			}
+			.reveal .muted {
+				opacity: 0.7;
+				font-size: 0.8em;
+			}
+			.reveal .lead {
+				font-size: 1.1em;
+			}
+			/* Two-column layout */
+			.reveal .cols {
+				display: flex;
+				gap: 1.2em;
+				align-items: flex-start;
+			}
+			.reveal .cols > div {
+				flex: 1;
+			}
+			/* Pros / cons cards */
+			.reveal .card {
+				border-radius: 12px;
+				padding: 0.6em 0.9em;
+				background: rgba(255, 255, 255, 0.55);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			}
+			.reveal .card h4 {
+				margin: 0 0 0.3em;
+			}
+			.reveal .pros {
+				border-top: 5px solid #2e7d32;
+			}
+			.reveal .pros h4 {
+				color: #2e7d32;
+			}
+			.reveal .cons {
+				border-top: 5px solid #c0392b;
+			}
+			.reveal .cons h4 {
+				color: #c0392b;
+			}
+			/* Activity / timer callout */
+			.reveal .activity {
+				border-radius: 12px;
+				padding: 0.7em 1em;
+				background: rgba(42, 118, 221, 0.12);
+				border-left: 6px solid var(--kairos-accent);
+				text-align: left;
+			}
+			.reveal .activity .timer {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 999px;
+				padding: 0.1em 0.7em;
+				font-weight: 700;
+				font-size: 0.8em;
+			}
+			.reveal .badge {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 6px;
+				padding: 0.05em 0.5em;
+				font-size: 0.55em;
+				vertical-align: middle;
+			}
+			/* Smaller text utility */
+			.reveal .small {
+				font-size: 0.75em;
+			}
+			.reveal .smaller {
+				font-size: 0.65em;
+			}
+			.reveal section img.framework {
+				max-height: 62vh;
+				background: #fff;
+				border-radius: 10px;
+				padding: 8px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+			}
+			.reveal .left {
+				text-align: left;
+			}
+			.reveal ul.tight li {
+				margin: 0.15em 0;
+			}
+			.reveal .ennea-num {
+				font-size: 1.6em;
+				color: var(--kairos-accent);
+				font-weight: 800;
+			}
+			.reveal a.kairos {
+				color: var(--kairos-accent);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- 1. TITLE -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h1>Entrepreneurship</h1>
+					<p class="subtitle">Studio Kairos · Internship · Day 1</p>
+					<p class="muted">Build something that serves people well.</p>
+				</section>
+
+				<!-- 2. INTRODUCTIONS -->
+				<section>
+					<h2>Let's Introduce Ourselves</h2>
+					<p class="muted">Go around the room and share:</p>
+					<ul>
+						<li>Your <strong>name</strong></li>
+						<li>Your <strong>school</strong></li>
+						<li>Your <strong>hobbies</strong></li>
+						<li class="fragment">
+							If you could start <em>any</em> business and money did
+							<u>not</u> matter — what would it be?
+						</li>
+					</ul>
+				</section>
+
+				<!-- 3. WHY START A BUSINESS -->
+				<section>
+					<section>
+						<h2>Why Start a Business?</h2>
+						<p class="muted">Use the arrow keys (↓) to go through each reason.</p>
+						<ul class="tight">
+							<li>Serve others</li>
+							<li>Solve pain points</li>
+							<li>Freedom</li>
+							<li>Purpose</li>
+							<li>Create "wow" moments</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Serve Others</h3>
+						<p class="lead">
+							A business that lasts isn't about you — it's about how well you
+							serve someone else.
+						</p>
+						<p class="muted">Money is the <em>result</em> of service, not the goal.</p>
+					</section>
+					<section>
+						<h3>Solve Pain Points</h3>
+						<p class="lead">
+							Every great business removes a <strong>pain</strong> from
+							someone's life.
+						</p>
+						<p class="muted">
+							No pain → no reason for a customer to pay you.
+						</p>
+					</section>
+					<section>
+						<h3>Freedom</h3>
+						<p class="lead">
+							Freedom over your time, your income, and the kind of work you
+							do.
+						</p>
+						<p class="muted">Freedom is earned by serving consistently.</p>
+					</section>
+					<section>
+						<h3>Purpose</h3>
+						<p class="lead">
+							The purpose of a business is to <strong>serve others
+							well</strong>.
+						</p>
+						<p class="muted">Profit follows purpose — not the other way around.</p>
+					</section>
+					<section>
+						<h3>"Wow" Moments</h3>
+						<p class="lead">Go beyond what the customer expects.</p>
+						<div class="cols">
+							<div class="card">
+								<h4>Bali</h4>
+								<p class="small">An experience so good it becomes a memory.</p>
+							</div>
+							<div class="card">
+								<h4>CLT</h4>
+								<p class="small">
+									A student who finally "gets it" and feels confident.
+								</p>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- 4. WHAT YOU NEED TO START -->
+				<section>
+					<section>
+						<h2>What Do You Need to Start?</h2>
+						<p class="muted">It's simpler than people think.</p>
+					</section>
+					<section>
+						<h3>1. A Website</h3>
+						<p>Your 24/7 storefront. It builds trust before you ever speak.</p>
+					</section>
+					<section>
+						<h3>2. Tell Friends & Family</h3>
+						<p>Your first customers and your first referrals start here.</p>
+					</section>
+					<section>
+						<h3>3. Marketing</h3>
+						<p>How the <em>right</em> people find out you exist.</p>
+					</section>
+					<section>
+						<h3>4. Business Cards</h3>
+						<p>A simple, physical way to be remembered after you meet someone.</p>
+					</section>
+				</section>
+
+				<!-- 5. EXPECTATIONS -->
+				<section>
+					<section>
+						<h2>Expectations</h2>
+						<ul class="tight left">
+							<li>Go slow and learn</li>
+							<li>Be open to all ideas</li>
+							<li>Document all your work</li>
+							<li>You are interning for <strong>Studio Kairos</strong></li>
+							<li>I want to give you work you're genuinely interested in</li>
+							<li>Explore different career fields</li>
+						</ul>
+						<p class="muted">↓ more</p>
+					</section>
+					<section>
+						<h2>Expectations</h2>
+						<ul class="tight left">
+							<li>A <strong>conversation</strong>, not a lecture — lots of hands-on activities</li>
+							<li>Write good notes</li>
+							<li>Break every hour for <strong>7 minutes</strong></li>
+							<li>
+								Last day: <strong>build your own business</strong> — a plan
+								and a website
+							</li>
+							<li>
+								At the end, a 1-on-1 chat if you're interested in interning
+								after this — <em>be honest</em>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 6. ENNEAGRAM -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>The Enneagram</h2>
+						<p class="lead">9 personality types — 9 different ways of seeing the world.</p>
+						<p class="muted">
+							Knowing your type helps you understand yourself, your teammates,
+							and your future customers.
+						</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">1</span></p>
+						<h3>The Reformer</h3>
+						<p class="left"><strong>Core motivation:</strong> to be good, right, and have integrity.</p>
+						<p class="left"><strong>Core fear:</strong> being corrupt, wrong, or defective.</p>
+						<p class="muted left">Example: Nelson Mandela.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">2</span></p>
+						<h3>The Helper</h3>
+						<p class="left"><strong>Core motivation:</strong> to be loved and needed.</p>
+						<p class="left"><strong>Core fear:</strong> being unwanted or unworthy of love.</p>
+						<p class="muted left">Example: Mother Teresa.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">3</span></p>
+						<h3>The Achiever</h3>
+						<p class="left"><strong>Core motivation:</strong> to feel valuable through success.</p>
+						<p class="left"><strong>Core fear:</strong> being worthless or a failure.</p>
+						<p class="muted left">Example: Taylor Swift.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">4</span></p>
+						<h3>The Individualist</h3>
+						<p class="left"><strong>Core motivation:</strong> to be unique and authentic.</p>
+						<p class="left"><strong>Core fear:</strong> having no identity or significance.</p>
+						<p class="muted left">Example: Frida Kahlo.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">5</span></p>
+						<h3>The Investigator</h3>
+						<p class="left"><strong>Core motivation:</strong> to be capable and competent.</p>
+						<p class="left"><strong>Core fear:</strong> being useless, helpless, or overwhelmed.</p>
+						<p class="muted left">Example: Albert Einstein.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">6</span></p>
+						<h3>The Loyalist</h3>
+						<p class="left"><strong>Core motivation:</strong> to have security and support.</p>
+						<p class="left"><strong>Core fear:</strong> being without guidance or safety.</p>
+						<p class="muted left">Example: Ellen DeGeneres.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">7</span></p>
+						<h3>The Enthusiast</h3>
+						<p class="left"><strong>Core motivation:</strong> to be happy and satisfied.</p>
+						<p class="left"><strong>Core fear:</strong> being deprived or trapped in pain.</p>
+						<p class="muted left">Example: Robin Williams.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">8</span></p>
+						<h3>The Challenger</h3>
+						<p class="left"><strong>Core motivation:</strong> to be strong and in control.</p>
+						<p class="left"><strong>Core fear:</strong> being controlled or harmed by others.</p>
+						<p class="muted left">Example: Martin Luther King Jr.</p>
+					</section>
+					<section>
+						<p><span class="ennea-num">9</span></p>
+						<h3>The Peacemaker</h3>
+						<p class="left"><strong>Core motivation:</strong> to have inner and outer peace.</p>
+						<p class="left"><strong>Core fear:</strong> loss, separation, and conflict.</p>
+						<p class="muted left">Example: Abraham Lincoln.</p>
+					</section>
+					<section>
+						<h3>Find Your Type</h3>
+						<div class="activity">
+							<p><span class="timer">⏱ 20 min</span> Take the free test:</p>
+							<p>
+								<a class="kairos" href="https://enneagram-personality.com/" target="_blank"
+									>enneagram-personality.com</a
+								>
+							</p>
+							<p class="small muted">
+								Be honest — answer how you actually are, not how you wish to
+								be.
+							</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 7. VISION & CLT -->
+				<section>
+					<h2>Vision &amp; CLT</h2>
+					<div class="cols">
+						<div class="card">
+							<h4>What you do</h4>
+							<p class="small">Tutoring sessions, study guides, practice problems.</p>
+						</div>
+						<div class="card">
+							<h4>What you <em>really</em> do</h4>
+							<p class="small">
+								Give students confidence and open doors to their future.
+							</p>
+						</div>
+					</div>
+					<p class="muted">Vision is the second column. Sell that.</p>
+				</section>
+
+				<!-- 8. BUSINESS PLAN -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>The Business Plan</h2>
+						<p class="muted">8 pieces every business needs. ↓</p>
+					</section>
+					<section>
+						<h3>1. Description</h3>
+						<p>In one sentence — what does your business do, and for whom?</p>
+					</section>
+					<section>
+						<h3>2. Vision</h3>
+						<p>Where is this going? What change do you want to create?</p>
+					</section>
+					<section>
+						<h3>3. Target Audience</h3>
+						<p>Who exactly are you serving?</p>
+						<p class="muted">Demographics + their pain points.</p>
+					</section>
+					<section>
+						<h3>4. Competitive Analysis</h3>
+						<p>Who are your competitors, and what are they doing?</p>
+					</section>
+					<section>
+						<h3>5. Your Edge</h3>
+						<p>What makes you <strong>different or better</strong> than them?</p>
+					</section>
+					<section>
+						<h3>6. Marketing Plan</h3>
+						<p class="small">
+							Flyers · SEO · social media · email · phone calls · local
+							network
+						</p>
+					</section>
+					<section>
+						<h3>7. Pricing Strategy</h3>
+						<p>Are you a <strong>budget</strong> provider or a <strong>premium</strong> one?</p>
+						<p class="muted">Both can win — pick one on purpose.</p>
+					</section>
+					<section>
+						<h3>8. Financial Projections</h3>
+						<ul class="tight">
+							<li>Startup cost</li>
+							<li>Break-even analysis</li>
+							<li>Projections (where will you be in 6–12 months?)</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 9. HARDEST PART -->
+				<section data-background-gradient="linear-gradient(to bottom, #fff3d6, #ffffff)">
+					<h2>What's the Hardest Part of Business?</h2>
+					<p class="fragment lead">Getting customers — and keeping them.</p>
+					<p class="fragment muted">
+						Everything else is solvable. This is the part you must practice
+						every single day.
+					</p>
+				</section>
+
+				<!-- 10. MARKETING -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Marketing</h2>
+						<p class="muted">Getting the right message to the right person. ↓</p>
+					</section>
+					<section>
+						<h3>Pain Points</h3>
+						<p>What problem keeps your customer up at night?</p>
+					</section>
+					<section>
+						<h3>User Personas</h3>
+						<p>A specific, made-up person who represents your ideal customer.</p>
+						<p class="muted small">
+							Name, age, goals, frustrations — make them feel real.
+						</p>
+					</section>
+					<section>
+						<h3>Tone</h3>
+						<p>How does your brand <em>sound</em>? Fun? Trusted? Expert? Warm?</p>
+					</section>
+					<section>
+						<h3>Practice Together</h3>
+						<div class="activity">
+							<p><span class="timer">⏱ 15 min</span></p>
+							<p>Find the <strong>pain points</strong> and <strong>personas</strong> of Clear Lake Tutor.</p>
+						</div>
+					</section>
+					<section>
+						<h3>See an Example</h3>
+						<p class="muted">Let's look at a real persona + pain-point breakdown together.</p>
+					</section>
+				</section>
+
+				<!-- 11. MARKETING PRINCIPLES -->
+				<section>
+					<h2>Marketing Principles</h2>
+					<ol class="left">
+						<li>Understand the business</li>
+						<li>Create content that targets someone's pain point</li>
+						<li>Create a tone and brand aesthetic</li>
+						<li>Target <strong>specific</strong> people — not everyone</li>
+					</ol>
+				</section>
+
+				<!-- 12. DESIGN PRINCIPLES -->
+				<section>
+					<h2>Design Principles</h2>
+					<div class="cols">
+						<div>
+							<ul class="tight left">
+								<li><strong>Readability</strong></li>
+								<li><strong>Color contrast</strong></li>
+							</ul>
+						</div>
+						<div>
+							<ul class="tight left">
+								<li><strong>Spacing</strong></li>
+								<li><strong>Visual hierarchy</strong></li>
+							</ul>
+						</div>
+					</div>
+					<p class="muted">Good design makes people trust you instantly.</p>
+				</section>
+
+				<!-- 13. WHAT IS AI -->
+				<section>
+					<h2>What Is AI?</h2>
+					<p class="left">
+						<strong>Definition:</strong> software that can learn from data and
+						perform tasks that normally need human intelligence.
+					</p>
+					<p class="left"><strong>Use cases:</strong> writing, research, design, planning, tutoring.</p>
+					<p class="left">
+						<strong>Generative AI:</strong> AI that <em>creates</em> new
+						content — text, images, and audio.
+					</p>
+				</section>
+
+				<!-- 14. PROMPT ENGINEERING - TEXT -->
+				<section>
+					<h2>Prompt Engineering — Text</h2>
+					<p class="subtitle">Garbage In → Garbage Out</p>
+					<img class="framework" src="image.png" alt="AGENT prompting framework" />
+				</section>
+
+				<!-- 15. PRACTICE: TEXT PROMPT -->
+				<section>
+					<h3>Practice: Write a Prompt</h3>
+					<div class="activity">
+						<p><span class="timer">⏱ 5 min</span></p>
+						<p>
+							Use the <strong>AGENT</strong> framework to write a prompt that
+							finds <strong>user personas</strong> for Clear Lake Tutor.
+						</p>
+					</div>
+				</section>
+
+				<!-- 16. PROMPT ENGINEERING - IMAGES -->
+				<section>
+					<h2>Prompt Engineering — Images</h2>
+					<img class="framework" src="image-1.png" alt="Image prompt attributes" />
+				</section>
+
+				<!-- 17. IMAGE GENERATION CAPABILITIES -->
+				<section>
+					<h2>Image Generation Capabilities</h2>
+					<div class="cols">
+						<div class="card pros">
+							<h4>Great at</h4>
+							<ul class="tight small left">
+								<li>Concept art &amp; mockups</li>
+								<li>Marketing visuals &amp; ads</li>
+								<li>Specific styles &amp; moods</li>
+								<li>Fast iteration on ideas</li>
+							</ul>
+						</div>
+						<div class="card cons">
+							<h4>Still struggles with</h4>
+							<ul class="tight small left">
+								<li>Accurate text in images</li>
+								<li>Hands &amp; fine details</li>
+								<li>Exact brand consistency</li>
+								<li>Precise counting / layout</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- 18. PRACTICE: IMAGE GENERATION -->
+				<section>
+					<h3>Practice: Generate an Image</h3>
+					<div class="activity">
+						<p><span class="timer">⏱ 10 min</span></p>
+						<p>
+							Pick a user persona and generate an image that speaks directly
+							to that user's <strong>pain point</strong>.
+						</p>
+					</div>
+				</section>
+
+				<!-- 19. AI MODELS -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>AI Models</h2>
+						<p class="muted">Three big players — each is best at something different. ↓</p>
+					</section>
+					<section>
+						<h3>ChatGPT</h3>
+						<div class="cols">
+							<div class="card pros">
+								<h4>Pros</h4>
+								<ul class="tight smaller left">
+									<li>Friendly "cheerleader"</li>
+									<li>Most user-friendly</li>
+									<li>Understands you very well</li>
+									<li>Positive &amp; encouraging</li>
+									<li>Best at formatting info</li>
+									<li>Asks good follow-up questions</li>
+								</ul>
+							</div>
+							<div class="card cons">
+								<h4>Cons</h4>
+								<ul class="tight smaller left">
+									<li>Won't always tell you the truth — too positive</li>
+									<li>A lot of emoji</li>
+									<li>Writing can sound "too AI"</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Gemini</h3>
+						<div class="cols">
+							<div class="card pros">
+								<h4>Pros</h4>
+								<ul class="tight smaller left">
+									<li>Most honest — will give bad news</li>
+									<li>NotebookLM for notes</li>
+									<li>Great with Google products</li>
+									<li>Images, deep research, legal</li>
+									<li>Cheapest</li>
+									<li>Largest context window</li>
+								</ul>
+							</div>
+							<div class="card cons">
+								<h4>Cons</h4>
+								<ul class="tight smaller left">
+									<li>Can be moody</li>
+									<li>Not the best at coding</li>
+									<li>Bland formatting</li>
+									<li>Shorter responses</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Claude</h3>
+						<div class="cols">
+							<div class="card pros">
+								<h4>Pros</h4>
+								<ul class="tight smaller left">
+									<li>Best at coding</li>
+									<li>Best at writing</li>
+									<li>Can read, modify &amp; create files on your computer</li>
+									<li>Creates great notes</li>
+								</ul>
+							</div>
+							<div class="card cons">
+								<h4>Cons</h4>
+								<ul class="tight smaller left">
+									<li>Costly</li>
+									<li>Not great at images</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- 20. AGENTS -->
+				<section>
+					<h2>Agents</h2>
+					<p class="left">
+						<strong>Definition:</strong> AI that can take <em>actions</em> —
+						create files, write code, generate images, and do deep planning.
+					</p>
+					<p class="left">
+						<strong>Examples:</strong> Claude Code building a website, an agent
+						researching and drafting a report on its own.
+					</p>
+				</section>
+
+				<!-- 21. TOKENS -->
+				<section>
+					<h2>Tokens</h2>
+					<p class="left">
+						<strong>Definition:</strong> the small chunks of text AI reads and
+						writes (roughly ¾ of a word each).
+					</p>
+					<p class="left"><strong>Example:</strong> "Clear Lake Tutor" ≈ 4 tokens.</p>
+					<p class="left">
+						<strong>Pricing:</strong> models charge per million tokens — Gemini
+						is cheapest, Claude costs more, ChatGPT sits in the middle.
+					</p>
+				</section>
+
+				<!-- 22. CONTEXT WINDOW -->
+				<section>
+					<h2>Context Window</h2>
+					<p class="left">
+						<strong>Definition:</strong> how much the AI can "remember" in one
+						conversation.
+					</p>
+					<p class="left"><strong>Example:</strong> a long chat eventually forgets the start.</p>
+					<p class="left"><strong>Ways to reduce it:</strong></p>
+					<ul class="tight small left">
+						<li>Keep prompts focused</li>
+						<li>Remove pasted text you no longer need</li>
+						<li><strong>Start a new chat</strong> for a new topic</li>
+					</ul>
+				</section>
+
+				<!-- 23. PROJECTS / GEMS / CUSTOM GPT -->
+				<section>
+					<h2>Claude Projects · Gemini Gems · Custom GPTs</h2>
+					<p class="left">
+						<strong>Definition:</strong> saved, reusable AI setups with your own
+						instructions and files built in.
+					</p>
+					<p class="left">
+						<strong>Use cases:</strong> a "CLT Marketing" assistant, a
+						chemistry tutor, a brand-voice writer — set it up once, reuse it
+						forever.
+					</p>
+				</section>
+
+				<!-- 24. DEEP RESEARCH -->
+				<section>
+					<h2>Deep Research</h2>
+					<p class="left">
+						<strong>Definition:</strong> the AI browses many sources and writes
+						a thorough, cited report for you.
+					</p>
+					<p class="left">
+						<strong>Use cases:</strong> competitor analysis, market research,
+						understanding a new client's industry.
+					</p>
+				</section>
+
+				<!-- 25. KEYBOARD SHORTCUTS -->
+				<section>
+					<h2>Keyboard Shortcuts</h2>
+					<ul class="left">
+						<li><strong>Copy</strong> — <code>Ctrl + C</code></li>
+						<li><strong>Paste</strong> — <code>Ctrl + V</code></li>
+						<li><strong>Screenshot</strong> — <code>Win + Shift + S</code></li>
+					</ul>
+				</section>
+
+				<!-- 26. PRIVATE CHAT -->
+				<section>
+					<h2>Private Chat</h2>
+					<p class="left">
+						<strong>Definition:</strong> a chat that isn't saved to the AI's
+						memory.
+					</p>
+					<p class="left">
+						<strong>Why use it:</strong> for one-off questions you don't want
+						disrupting your AI's long-term memory and context.
+					</p>
+				</section>
+
+				<!-- 27. TALKING TO A CLIENT -->
+				<section>
+					<h2>Talking to a Client</h2>
+					<p class="muted">Your job is to find — and measure — their pain.</p>
+					<ol class="small left">
+						<li>"Describe your business to me."</li>
+						<li>Ask questions to get to know their company.</li>
+						<li>"What are some wins you've had?"</li>
+						<li>"It sounds like you've got a lot figured out."</li>
+						<li>Goal: uncover their <strong>pain points</strong>.</li>
+						<li>"How painful is this for you?"</li>
+						<li>Find out what the pain is <strong>costing</strong> them — and what they'd pay to fix it.</li>
+						<li>If time's short, ask for a <strong>future meeting</strong>.</li>
+					</ol>
+				</section>
+
+				<!-- 28. INTERN PROJECTS -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Your Individual Projects</h2>
+						<p class="muted">Tailored to what each of you wants to grow in. ↓</p>
+					</section>
+					<section>
+						<h3>Emma <span class="badge">Marketing</span></h3>
+						<p class="small left">Research the business &amp; the person first. Starter prompt:</p>
+						<p class="smaller left muted">
+							"I'm doing marketing for this website. Tell me everything —
+							descriptions, values, events, tone, services. The owner is Mason
+							Tang, who lives in Houston, TX; tell me about him too. I want as
+							much as possible so I can talk to the client easily."
+						</p>
+						<ul class="tight smaller left">
+							<li>Ideas for LinkedIn, Facebook, maybe Instagram</li>
+							<li>Ideas for YouTube videos</li>
+							<li>Keep all content <strong>educational</strong></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Lauren <span class="badge">Chemistry</span></h3>
+						<p class="left">Build chemistry education content:</p>
+						<ul class="tight small left">
+							<li>Notes</li>
+							<li>Worksheets</li>
+							<li>Diagrams</li>
+							<li>Tests</li>
+							<li>Cheat sheets — using <strong>Claude Code</strong></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Abdullah <span class="badge">Web / CLT</span></h3>
+						<ul class="tight small left">
+							<li>Walk through VS Code</li>
+							<li>Put study guides onto the Clear Lake Tutor website</li>
+							<li>
+								Work through the
+								<a class="kairos" href="https://www.freecodecamp.org/learn/responsive-web-design-v9" target="_blank"
+									>freeCodeCamp Responsive Web Design</a
+								>
+								certification
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Roshan <span class="badge">YouTube</span></h3>
+						<ul class="tight smaller left">
+							<li><strong>Title</strong> — ≤100 chars; front-load keywords; make it compelling</li>
+							<li><strong>Description</strong> — ≤5,000 chars; keywords, links, timestamps, CTA</li>
+							<li><strong>Thumbnail</strong> — custom, 1280×720, &lt;2MB, JPG/PNG/GIF</li>
+							<li><strong>Category</strong> — pick the closest match (e.g. Education)</li>
+							<li><strong>Tags</strong> — ~500 chars; main keyword + variations</li>
+							<li>Research varied practice problems; write scripts; study top-performing videos</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 29. CLOSING -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h2>That's Day 1</h2>
+					<p class="lead">Go slow. Stay curious. Serve people well.</p>
+					<p class="left">
+						<strong>Looking ahead:</strong> on the last day you'll build and
+						pitch your <em>own</em> business — plan + website.
+					</p>
+					<p class="muted">
+						And we'll have a 1-on-1 if you'd like to keep interning after this.
+					</p>
+				</section>
 			</div>
 		</div>
 
@@ -34,6 +849,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
