@@ -200,6 +200,12 @@
 			.reveal a.kairos {
 				color: var(--kairos-accent);
 			}
+			.reveal section.img-prompt h2 {
+				margin-bottom: 0.45em;
+			}
+			.reveal section.img-prompt .agent-word {
+				width: 120px;
+			}
 		</style>
 	</head>
 	<body>
@@ -665,9 +671,36 @@
 				</section>
 
 				<!-- 16. PROMPT ENGINEERING - IMAGES -->
-				<section>
+				<section class="img-focus img-prompt">
 					<h2>Prompt Engineering — Images</h2>
-					<img class="framework" src="image-1.png" alt="Image prompt attributes" />
+					<div class="agent-table">
+						<div class="agent-header">What to Include in an Image Prompt</div>
+						<div class="agent-row">
+							<span class="agent-letter">S</span>
+							<span class="agent-word">Subject</span>
+							<span class="agent-desc">The "who" or "what" of the image. <span class="agent-code">e.g. a teenage student, a golden retriever, a coffee shop</span></span>
+						</div>
+						<div class="agent-row">
+							<span class="agent-letter">A</span>
+							<span class="agent-word">Action</span>
+							<span class="agent-desc">What's happening. <span class="agent-code">e.g. studying at a desk, running through a field, pouring latte art</span></span>
+						</div>
+						<div class="agent-row">
+							<span class="agent-letter">L</span>
+							<span class="agent-word">Location</span>
+							<span class="agent-desc">The "where" of the image. <span class="agent-code">e.g. a sunlit library, a rainy city street, a cozy kitchen</span></span>
+						</div>
+						<div class="agent-row">
+							<span class="agent-letter">C</span>
+							<span class="agent-word">Composition</span>
+							<span class="agent-desc">Camera controls and lighting details. <span class="agent-code">e.g. close-up portrait, wide angle, soft natural light, golden hour</span></span>
+						</div>
+						<div class="agent-row">
+							<span class="agent-letter">S</span>
+							<span class="agent-word">Style</span>
+							<span class="agent-desc">The overall aesthetic. <span class="agent-code">e.g. photorealistic, watercolor, flat illustration, cinematic, vintage</span></span>
+						</div>
+					</div>
 				</section>
 
 				<!-- 17. IMAGE GENERATION CAPABILITIES -->
