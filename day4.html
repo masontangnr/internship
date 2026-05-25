@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>Entrepreneurship · Studio Kairos Internship · Day 4</title>
+
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/sky.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+		<style>
+			:root {
+				--kairos-accent: #2a76dd;
+				--kairos-ink: #333;
+			}
+			.reveal h1,
+			.reveal h2,
+			.reveal h3 {
+				letter-spacing: -0.01em;
+				white-space: nowrap;
+				font-size: clamp(0.8rem, 5vw, 2.5em);
+			}
+			.reveal .subtitle {
+				color: var(--kairos-accent);
+				font-weight: 600;
+			}
+			.reveal .muted {
+				opacity: 0.7;
+				font-size: 0.8em;
+			}
+			.reveal .lead {
+				font-size: 1.1em;
+			}
+			/* Two-column layout */
+			.reveal .cols {
+				display: flex;
+				gap: 1.2em;
+				align-items: flex-start;
+			}
+			.reveal .cols > div {
+				flex: 1;
+			}
+			/* Pros / cons cards */
+			.reveal .card {
+				border-radius: 12px;
+				padding: 0.6em 0.9em;
+				background: rgba(255, 255, 255, 0.55);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			}
+			.reveal .card h4 {
+				margin: 0 0 0.3em;
+			}
+			.reveal .pros {
+				border-top: 5px solid #2e7d32;
+			}
+			.reveal .pros h4 {
+				color: #2e7d32;
+			}
+			.reveal .cons {
+				border-top: 5px solid #c0392b;
+			}
+			.reveal .cons h4 {
+				color: #c0392b;
+			}
+			/* Activity / timer callout */
+			.reveal .activity {
+				border-radius: 12px;
+				padding: 0.7em 1em;
+				background: rgba(42, 118, 221, 0.12);
+				border-left: 6px solid var(--kairos-accent);
+				text-align: left;
+			}
+			.reveal .activity .timer {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 999px;
+				padding: 0.1em 0.7em;
+				font-weight: 700;
+				font-size: 0.8em;
+			}
+			.reveal .badge {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 6px;
+				padding: 0.05em 0.5em;
+				font-size: 0.55em;
+				vertical-align: middle;
+			}
+			/* Smaller text utility */
+			.reveal .small {
+				font-size: 0.75em;
+			}
+			.reveal .smaller {
+				font-size: 0.65em;
+			}
+			.reveal .left {
+				text-align: left;
+			}
+			.reveal ul.tight li {
+				margin: 0.15em 0;
+			}
+			.reveal a.kairos {
+				color: var(--kairos-accent);
+			}
+			/* Finance table */
+			.reveal .finance-table {
+				background: #fff;
+				border-radius: 12px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+				padding: 16px 24px;
+				width: 88%;
+				margin: 0 auto;
+				text-align: left;
+				color: #222;
+			}
+			.reveal .finance-row {
+				display: flex;
+				align-items: center;
+				border-top: 1px solid #e0e0e0;
+				padding: 8px 0;
+				gap: 16px;
+			}
+			.reveal .finance-icon {
+				font-size: 1.4em;
+				width: 36px;
+				flex-shrink: 0;
+				text-align: center;
+			}
+			.reveal .finance-label {
+				font-size: 0.7em;
+				font-weight: 700;
+				color: #2a76dd;
+				width: 110px;
+				flex-shrink: 0;
+				padding-right: 1em;
+			}
+			.reveal .finance-desc {
+				font-size: 0.62em;
+				color: #444;
+				line-height: 1.5;
+			}
+			/* Highlight box */
+			.reveal .highlight-box {
+				border-radius: 12px;
+				padding: 0.7em 1.1em;
+				background: rgba(42, 118, 221, 0.1);
+				border: 2px solid var(--kairos-accent);
+				text-align: left;
+			}
+			/* LLC callout */
+			.reveal .llc-box {
+				border-radius: 12px;
+				padding: 0.8em 1.2em;
+				background: rgba(255, 243, 214, 0.9);
+				border-left: 6px solid #f0a500;
+				text-align: left;
+			}
+			/* Website component grid */
+			.reveal .component-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.6em;
+				width: 90%;
+				margin: 0 auto;
+			}
+			.reveal .component-item {
+				background: #fff;
+				border-radius: 8px;
+				padding: 0.5em 0.7em;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+				font-size: 0.62em;
+				text-align: left;
+			}
+			.reveal .component-item strong {
+				color: var(--kairos-accent);
+				display: block;
+				margin-bottom: 0.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- 1. TITLE -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h1>Day 4</h1>
+					<p class="subtitle">Studio Kairos · Internship</p>
+					<p class="muted">Finance, Business Plans &amp; Building Your Website.</p>
+				</section>
+
+				<!-- 2. OCEAN PERSONALITY TEST -->
+				<section>
+					<h2>OCEAN Personality Test</h2>
+					<p class="muted">A science-backed look at who you are.</p>
+					<div class="activity">
+						<p><span class="timer">⏱ 15 min</span> Take the free test:</p>
+						<p>
+							<a class="kairos" href="https://bigfive-test.com/" target="_blank">bigfive-test.com</a>
+						</p>
+						<p class="small muted">
+							Answer honestly — there are no right or wrong personality types.
+						</p>
+					</div>
+				</section>
+
+				<!-- 3. INCOME / EXPENSES / PROFIT -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Income · Expenses · Profit</h2>
+						<p class="muted">The three numbers every business owner must know. ↓</p>
+					</section>
+					<section>
+						<div class="finance-table">
+							<div class="finance-row">
+								<span class="finance-icon">💰</span>
+								<span class="finance-label">Income</span>
+								<span class="finance-desc">Money <strong>coming in</strong> to your business — from sales, services, or any revenue source.</span>
+							</div>
+							<div class="finance-row">
+								<span class="finance-icon">📤</span>
+								<span class="finance-label">Expenses</span>
+								<span class="finance-desc">Money <strong>leaving</strong> your business — rent, supplies, salaries, software, marketing, etc.</span>
+							</div>
+							<div class="finance-row">
+								<span class="finance-icon">📈</span>
+								<span class="finance-label">Profit</span>
+								<span class="finance-desc"><strong>Income − Expenses.</strong> This is what you actually keep. If it's negative, you're losing money.</span>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- 4. STARTUP EXPENSES -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Startup Expenses</h2>
+						<p class="muted">One-time costs to get your business off the ground. ↓</p>
+					</section>
+					<section>
+						<h3>Startup Expenses</h3>
+						<ul class="tight left">
+							<li>Equipment</li>
+							<li>LLC Filing Fees</li>
+							<li>Software</li>
+							<li>Vehicles</li>
+							<li>Utilities / Rent Deposit</li>
+							<li>Furniture</li>
+						</ul>
+						<p class="muted small">These are paid once to open your doors — not every month.</p>
+					</section>
+				</section>
+
+				<!-- 5. REVENUE ASSUMPTIONS -->
+				<section>
+					<h2>Revenue Assumptions</h2>
+					<p class="muted left">Before you can project profit, estimate your sales:</p>
+					<ul class="tight left">
+						<li>Estimated <strong>sales per month</strong></li>
+						<li>Per <strong>product or service</strong></li>
+						<li>Average <strong>price per sale</strong> for each product or service</li>
+					</ul>
+					<p class="muted small">Revenue Assumption = Units Sold × Average Price</p>
+				</section>
+
+				<!-- 6. COST OF SERVICE -->
+				<section>
+					<h2>Cost of Service</h2>
+					<p class="lead">What does it actually cost you to deliver the service?</p>
+					<div class="highlight-box">
+						<p class="small"><strong>Materials &amp; Supplies</strong> — everything you consume or use up per job.</p>
+						<p class="small muted">Example: a painter pays for paint, tape, and brushes on every project.</p>
+					</div>
+					<p class="muted small">This is separate from your fixed monthly costs.</p>
+				</section>
+
+				<!-- 7. OPERATING EXPENSES -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Operating Expenses</h2>
+						<p class="muted">The recurring costs of keeping your business running. ↓</p>
+					</section>
+					<section>
+						<h3>Monthly Operating Expenses</h3>
+						<ul class="tight left">
+							<li>Monthly Rent</li>
+							<li>Office Supplies</li>
+							<li>Salaries</li>
+							<li>Marketing</li>
+							<li>Utilities</li>
+							<li>Insurance</li>
+						</ul>
+						<p class="muted small">These recur every month whether or not you make a sale.</p>
+					</section>
+				</section>
+
+				<!-- 8. BREAKEVEN POINT -->
+				<section data-background-gradient="linear-gradient(to bottom, #fff3d6, #ffffff)">
+					<h2>Breakeven Point</h2>
+					<div class="highlight-box">
+						<p class="small">
+							The <strong>breakeven point</strong> is the level of sales at which your
+							<strong>expenses equal your revenue</strong> — you're not losing money,
+							but you're not profiting yet either.
+						</p>
+					</div>
+					<p class="fragment lead">Below breakeven → losing money.</p>
+					<p class="fragment lead">Above breakeven → <strong>profit</strong>.</p>
+				</section>
+
+				<!-- 9. LLC -->
+				<section>
+					<h2>What Is an LLC?</h2>
+					<div class="llc-box">
+						<p class="small">
+							A <strong>Limited Liability Company (LLC)</strong> is a business structure
+							that <strong>protects your personal assets</strong> — like your home or
+							savings — from business debts and lawsuits.
+						</p>
+					</div>
+					<p class="muted small fragment">If someone sues your business, they can't come after your personal bank account.</p>
+					<p class="muted small fragment">It's one of the first things most entrepreneurs set up.</p>
+				</section>
+
+				<!-- 10. BRAINSTORM BUSINESS IDEAS -->
+				<section>
+					<h2>Brainstorm Business Ideas</h2>
+					<div class="activity">
+						<p><span class="timer">⏱ 10 min</span></p>
+						<p>Write down as many business ideas as you can think of.</p>
+						<p class="small muted">No filtering yet — quantity over quality at this stage.</p>
+					</div>
+				</section>
+
+				<!-- 11. BUILD YOUR BUSINESS PLAN -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Build Your Business Plan</h2>
+						<p class="muted">8 sections. 30 minutes. Let's go. ↓</p>
+					</section>
+					<section>
+						<h3>1. Description</h3>
+						<p>In one sentence — what does your business do, and for whom?</p>
+					</section>
+					<section>
+						<h3>2. Vision</h3>
+						<p>Where is this going? What change do you want to create?</p>
+					</section>
+					<section>
+						<h3>3. Target Audience</h3>
+						<p>Who exactly are you serving?</p>
+						<p class="muted small">Demographics + their pain points.</p>
+					</section>
+					<section>
+						<h3>4. Competitive Analysis</h3>
+						<p>Who are your competitors, and what are they doing?</p>
+					</section>
+					<section>
+						<h3>5. Your Edge</h3>
+						<p>What makes you <strong>different or better</strong> than them?</p>
+					</section>
+					<section>
+						<h3>6. Marketing Plan</h3>
+						<p class="small">Flyers · SEO · Social media · Email · Phone calls · Local network</p>
+					</section>
+					<section>
+						<h3>7. Pricing Strategy</h3>
+						<p>Are you a <strong>budget</strong> provider or a <strong>premium</strong> one?</p>
+						<p class="muted">Both can win — pick one on purpose.</p>
+					</section>
+					<section>
+						<h3>8. Financial Projections</h3>
+						<ul class="tight left">
+							<li>Startup cost</li>
+							<li>Operating Expenses</li>
+							<li>Cost of Service</li>
+							<li>Income Projections</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Your Turn</h3>
+						<div class="activity">
+							<p><span class="timer">⏱ 30 min</span></p>
+							<p>Build your business plan using the 8 sections above.</p>
+							<p class="small muted">Use AI to help — paste your idea and ask it to fill out each section.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 12. CREATE YOUR WEBSITE -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Create Your Website</h2>
+						<p class="muted">Turn your business plan into a real website. ↓</p>
+					</section>
+					<section>
+						<h3>How to Start</h3>
+						<ol class="left small">
+							<li>Copy and paste your business plan into AI</li>
+							<li>Describe the <strong>tone</strong> of your website</li>
+							<li>Choose your approach:</li>
+						</ol>
+						<ul class="tight small left" style="margin-left: 2em; margin-top: 0.5em;">
+							<li>Describe each component individually</li>
+							<li>Draw a wireframe on paper, then give it to AI</li>
+							<li>Let AI decide the layout</li>
+						</ul>
+						<p class="muted small">Iterate until you have something you love.</p>
+					</section>
+					<section>
+						<h3>Website Components</h3>
+						<div class="component-grid">
+							<div class="component-item">
+								<strong>Navbar</strong>
+								Top of the page — links to sections
+							</div>
+							<div class="component-item">
+								<strong>Header</strong>
+								Describes your business + Call to Action
+							</div>
+							<div class="component-item">
+								<strong>Services</strong>
+								What you offer and how it helps
+							</div>
+							<div class="component-item">
+								<strong>Qualifications</strong>
+								Why should they trust you?
+							</div>
+							<div class="component-item">
+								<strong>About</strong>
+								Your story and mission
+							</div>
+							<div class="component-item">
+								<strong>Pricing</strong>
+								(optional) Your rates or packages
+							</div>
+							<div class="component-item">
+								<strong>Testimonials</strong>
+								Social proof from past clients
+							</div>
+							<div class="component-item">
+								<strong>Contact Form</strong>
+								How customers reach you
+							</div>
+							<div class="component-item">
+								<strong>Footer</strong>
+								Name · Email · Phone · Details
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Build It</h3>
+						<div class="activity">
+							<p><span class="timer">⏱ 30 min</span></p>
+							<p>Use your business plan to build your website with AI.</p>
+							<p class="small muted">Start with the header and hero — get that right first, then add sections one by one.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 13. CLOSING -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h2>That's Day 4</h2>
+					<p class="lead">You built a business plan and a website. That's real.</p>
+					<p class="muted">
+						Keep refining both — a great business and a great site are never truly "done."
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="dist/plugin/notes.js"></script>
+		<script src="dist/plugin/markdown.js"></script>
+		<script src="dist/plugin/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
