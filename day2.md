@@ -7,7 +7,9 @@ Title Slide: Working Genius and Design
   2. Definition of good UI/UX design on a website
 3. Visual Hiearchy- definition
 4. Example of good visual hiearchy website with photo
+  ![alt text](image-12.png)
 5. Example of bad visual hiearchy website with photo
+![alt text](image-13.png)
 6. It all starts with alignment & Grid
    1. Definition
    2. Pictures of good alignment of a website
