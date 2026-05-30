@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>Working Genius &amp; Design · Studio Kairos Internship</title>
+
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/sky.css" />
+
+		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+		<style>
+			:root {
+				--kairos-accent: #2a76dd;
+				--kairos-ink: #333;
+			}
+			.reveal h1,
+			.reveal h2,
+			.reveal h3 {
+				letter-spacing: -0.01em;
+				white-space: nowrap;
+				font-size: clamp(0.8rem, 5vw, 2.5em);
+			}
+			.reveal .subtitle {
+				color: var(--kairos-accent);
+				font-weight: 600;
+			}
+			.reveal .muted {
+				opacity: 0.7;
+				font-size: 0.8em;
+			}
+			.reveal .lead {
+				font-size: 1.1em;
+			}
+			/* Two-column layout */
+			.reveal .cols {
+				display: flex;
+				gap: 1.2em;
+				align-items: flex-start;
+			}
+			.reveal .cols > div {
+				flex: 1;
+			}
+			/* Pros / cons cards */
+			.reveal .card {
+				border-radius: 12px;
+				padding: 0.6em 0.9em;
+				background: rgba(255, 255, 255, 0.55);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			}
+			.reveal .card h4 {
+				margin: 0 0 0.3em;
+			}
+			.reveal .pros {
+				border-top: 5px solid #2e7d32;
+			}
+			.reveal .pros h4 {
+				color: #2e7d32;
+			}
+			.reveal .cons {
+				border-top: 5px solid #c0392b;
+			}
+			.reveal .cons h4 {
+				color: #c0392b;
+			}
+			/* Activity / timer callout */
+			.reveal .activity {
+				border-radius: 12px;
+				padding: 0.7em 1em;
+				background: rgba(42, 118, 221, 0.12);
+				border-left: 6px solid var(--kairos-accent);
+				text-align: left;
+			}
+			.reveal .activity .timer {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 999px;
+				padding: 0.1em 0.7em;
+				font-weight: 700;
+				font-size: 0.8em;
+			}
+			.reveal .badge {
+				display: inline-block;
+				background: var(--kairos-accent);
+				color: #fff;
+				border-radius: 6px;
+				padding: 0.05em 0.5em;
+				font-size: 0.55em;
+				vertical-align: middle;
+			}
+			/* Smaller text utility */
+			.reveal .small {
+				font-size: 0.75em;
+			}
+			.reveal .smaller {
+				font-size: 0.65em;
+			}
+			.reveal section img.framework {
+				max-height: 62vh;
+				background: #fff;
+				border-radius: 10px;
+				padding: 8px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+			}
+			.reveal section.img-focus {
+				top: 0 !important;
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+			}
+			.reveal section.img-focus h2 {
+				font-size: 1.4em;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			.reveal section.img-focus .subtitle {
+				font-size: 0.8em;
+				margin-top: 2px;
+				margin-bottom: 6px;
+			}
+			.reveal section.img-focus img.framework {
+				max-height: 80vh;
+				width: 85%;
+				max-width: 85%;
+			}
+			.reveal .agent-table {
+				background: #fff;
+				border-radius: 12px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+				padding: 18px 28px;
+				width: 82%;
+				margin: 0 auto;
+				text-align: left;
+				color: #222;
+			}
+			.reveal .agent-header {
+				font-size: 0.72em;
+				font-weight: 700;
+				color: #222;
+				margin-bottom: 10px;
+				font-family: serif;
+			}
+			.reveal .agent-row {
+				display: flex;
+				align-items: flex-start;
+				border-top: 1px solid #ccc;
+				padding: 9px 0;
+				gap: 16px;
+			}
+			.reveal .agent-letter {
+				font-size: 1.5em;
+				font-weight: 900;
+				color: #2ec4c4;
+				width: 32px;
+				flex-shrink: 0;
+				font-family: serif;
+				line-height: 1;
+			}
+			.reveal .agent-word {
+				font-size: 0.62em;
+				font-weight: 700;
+				color: #222;
+				width: 90px;
+				flex-shrink: 0;
+				padding-top: 4px;
+				font-family: serif;
+			}
+			.reveal .agent-desc {
+				font-size: 0.58em;
+				color: #333;
+				line-height: 1.5;
+				padding-top: 4px;
+				font-family: serif;
+			}
+			.reveal .agent-code {
+				color: #2ec4c4;
+				font-family: monospace;
+			}
+			.reveal .left {
+				text-align: left;
+			}
+			.reveal ul.tight li {
+				margin: 0.15em 0;
+			}
+			.reveal .wg-num {
+				font-size: 1.2em;
+				color: var(--kairos-accent);
+				font-weight: 800;
+			}
+			.reveal .wg-slide p {
+				margin: 0.2em 0;
+			}
+			.reveal a.kairos {
+				color: var(--kairos-accent);
+			}
+			/* Color swatch row */
+			.reveal .swatch-row {
+				display: flex;
+				gap: 0.6em;
+				justify-content: center;
+				margin-top: 0.5em;
+			}
+			.reveal .swatch {
+				flex: 1;
+				border-radius: 10px;
+				padding: 0.5em 0.3em;
+				color: #fff;
+				font-size: 0.55em;
+				font-weight: 700;
+				text-align: center;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- 1. TITLE -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h1>Working Genius &amp; Design</h1>
+					<p class="subtitle">Studio Kairos · Internship · Day 2</p>
+					<p class="muted">Know how you work. Then make it beautiful.</p>
+				</section>
+
+				<!-- 2. WORKING GENIUS -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>The 6 Types of Working Genius</h2>
+						<p class="lead">Every person has 2 genius types — work that energizes them.</p>
+						<p class="muted">
+							<a class="kairos" href="https://www.workinggenius.com/" target="_blank">workinggenius.com</a>
+							· Use the arrow keys (↓) to explore each type.
+						</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">W</span></p>
+						<h3>Wonder</h3>
+						<p class="left"><strong>Core gift:</strong> asking "why" — seeing what could be better.</p>
+						<p class="left small">People with the genius of Wonder naturally question whether things are working the way they should. They identify unmet needs and problems worth solving before anyone else sees them. They are energized by possibility and potential.</p>
+						<p class="left small"><strong>Strength:</strong> spotting opportunities others overlook, generating curiosity-driven questions.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> getting stuck in endless questioning without moving to action.</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">I</span></p>
+						<h3>Invention</h3>
+						<p class="left"><strong>Core gift:</strong> creating original, novel solutions to problems.</p>
+						<p class="left small">People with the genius of Invention love to take a need or problem and dream up a completely new approach. They are energized by the blank page and thrive when given room to brainstorm without constraints.</p>
+						<p class="left small"><strong>Strength:</strong> generating creative ideas that no one has thought of before.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> moving on to the next idea before the current one is finished.</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">D</span></p>
+						<h3>Discernment</h3>
+						<p class="left"><strong>Core gift:</strong> evaluating and refining ideas with gut-level instinct.</p>
+						<p class="left small">People with the genius of Discernment have an intuitive ability to assess ideas and plans. They naturally know what will work and what won't — even when they can't fully explain why. They add wisdom to the creative process.</p>
+						<p class="left small"><strong>Strength:</strong> quickly filtering good ideas from bad ones, improving proposals.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> being overly critical or dismissive without offering alternatives.</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">G</span></p>
+						<h3>Galvanizing</h3>
+						<p class="left"><strong>Core gift:</strong> rallying people and inspiring them to take action.</p>
+						<p class="left small">People with the genius of Galvanizing are natural motivators. They create momentum by communicating ideas in a way that energizes others. They love to get people moving and are at their best when rallying a team around a cause.</p>
+						<p class="left small"><strong>Strength:</strong> building enthusiasm, starting movements, communicating vision.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> moving on before the team is fully aligned or prepared.</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">E</span></p>
+						<h3>Enablement</h3>
+						<p class="left"><strong>Core gift:</strong> providing support and helping others succeed.</p>
+						<p class="left small">People with the genius of Enablement are responsive and relationship-focused. They find energy in supporting others' work and stepping in wherever help is needed. They are the glue that holds teams together.</p>
+						<p class="left small"><strong>Strength:</strong> adaptability, loyalty, making others feel supported and valued.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> saying yes to everything and running out of energy for their own priorities.</p>
+					</section>
+
+					<section class="wg-slide">
+						<p><span class="wg-num">T</span></p>
+						<h3>Tenacity</h3>
+						<p class="left"><strong>Core gift:</strong> pushing through to completion — getting things done.</p>
+						<p class="left small">People with the genius of Tenacity are energized by finishing. They love checking things off, delivering results, and seeing projects through to the end. They are the ones who make sure the job actually gets done.</p>
+						<p class="left small"><strong>Strength:</strong> follow-through, reliability, pushing past obstacles to deliver.</p>
+						<p class="muted left small"><strong>Watch out for:</strong> becoming frustrated when others don't share their drive to finish.</p>
+					</section>
+
+					<section>
+						<h3>Activity: Working Genius Slides</h3>
+						<div class="activity">
+							<p><span class="timer">⏱ 10 min</span></p>
+							<p><strong>Write down which personality type feels most like you</strong> and which feels like your biggest frustration with others.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 3. WHAT IS GOOD UI/UX DESIGN -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>What Is Good UI/UX Design?</h2>
+						<p class="lead">"Good design is when you don't notice it."</p>
+						<p class="muted">↓ Let's unpack that.</p>
+					</section>
+					<section>
+						<h3>Definition</h3>
+						<p class="left"><strong>UI (User Interface):</strong> the visual elements a user interacts with — buttons, colors, fonts, layout.</p>
+						<p class="left"><strong>UX (User Experience):</strong> how the whole journey <em>feels</em> — easy, confusing, fast, frustrating.</p>
+						<p class="left small muted">Great UI/UX means users get what they need without thinking about it. They never feel lost. Every click makes sense. The design gets out of the way.</p>
+					</section>
+				</section>
+
+				<!-- 4. VISUAL HIERARCHY -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Visual Hierarchy</h2>
+						<p class="muted">Guiding the user's eye — without them knowing it. ↓</p>
+					</section>
+					<section>
+						<h3>Definition</h3>
+						<p class="left"><strong>Visual hierarchy</strong> is the arrangement of elements so that the most important information is seen first.</p>
+						<ul class="tight small left">
+							<li>Size — bigger = more important</li>
+							<li>Color — high contrast draws attention</li>
+							<li>Spacing — white space signals importance</li>
+							<li>Position — top-left is read first (in most cultures)</li>
+						</ul>
+						<p class="muted small">If everything shouts, nothing is heard.</p>
+					</section>
+					<section>
+						<h3>Good Visual Hierarchy</h3>
+						<p class="muted small">Insert screenshot of a well-designed website here.</p>
+						<div class="card" style="margin-top: 0.5em;">
+							<p class="small left"><strong>What to look for:</strong> clear headline, supporting subtext, obvious call-to-action. Your eye moves naturally top → bottom, left → right.</p>
+						</div>
+					</section>
+					<section>
+						<h3>Bad Visual Hierarchy</h3>
+						<p class="muted small">Insert screenshot of a poorly designed website here.</p>
+						<div class="card" style="margin-top: 0.5em;">
+							<p class="small left"><strong>What goes wrong:</strong> too many competing elements, no clear focal point, everything the same size and weight — the user doesn't know where to look.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 5. ALIGNMENT & GRID -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Alignment &amp; Grid</h2>
+						<p class="muted">The invisible structure behind every clean design. ↓</p>
+					</section>
+					<section>
+						<h3>Definition</h3>
+						<p class="left"><strong>Alignment</strong> means every element is placed intentionally — nothing floats randomly. Elements align to a shared edge or center.</p>
+						<p class="left"><strong>Grid</strong> is the invisible column system that keeps layouts consistent across every page.</p>
+						<p class="small muted left">A grid gives a designer rules to break <em>on purpose</em> — which creates visual interest without chaos.</p>
+					</section>
+					<section>
+						<h3>Good Alignment</h3>
+						<p class="muted small">Insert screenshot of a well-aligned website here.</p>
+						<div class="card" style="margin-top: 0.5em;">
+							<p class="small left"><strong>What to look for:</strong> consistent margins, text that starts on the same invisible line, buttons and images that sit on the grid.</p>
+						</div>
+					</section>
+					<section>
+						<h3>Bad Alignment</h3>
+						<p class="muted small">Insert screenshot of a misaligned website here.</p>
+						<div class="card" style="margin-top: 0.5em;">
+							<p class="small left"><strong>What goes wrong:</strong> elements at random positions, inconsistent margins, text that feels like it was dropped wherever there was space.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- 6. COLOR THEORY -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Color Theory</h2>
+						<p class="muted">Color doesn't just look good — it communicates. ↓</p>
+					</section>
+					<section>
+						<h3>What Is Color Theory?</h3>
+						<p class="left">Color theory is the set of rules and guidelines designers use to choose colors that work together and send the right emotional message.</p>
+						<ul class="tight small left">
+							<li><strong>Hue</strong> — the actual color (red, blue, green)</li>
+							<li><strong>Saturation</strong> — how vivid or muted</li>
+							<li><strong>Value</strong> — how light or dark</li>
+							<li><strong>Contrast</strong> — the difference between elements (critical for readability)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Color Changes the Tone</h3>
+						<p class="small muted">Same layout — completely different feeling.</p>
+						<div class="swatch-row">
+							<div class="swatch" style="background: #1a1a2e;">Luxury &amp; Trust<br><span style="font-weight:400">Deep navy</span></div>
+							<div class="swatch" style="background: #e74c3c;">Urgency &amp; Energy<br><span style="font-weight:400">Bright red</span></div>
+							<div class="swatch" style="background: #27ae60;">Health &amp; Growth<br><span style="font-weight:400">Green</span></div>
+							<div class="swatch" style="background: #f39c12; color: #333;">Warmth &amp; Playful<br><span style="font-weight:400">Orange</span></div>
+						</div>
+						<p class="small muted" style="margin-top: 0.7em;">Clear Lake Tutor uses blue — trust, calm, competence.</p>
+					</section>
+				</section>
+
+				<!-- 7. PROXIMITY -->
+				<section class="img-focus">
+					<h2>Proximity</h2>
+					<p class="subtitle">Elements that are related should be close to one another.</p>
+					<img class="framework" src="image-4.png" alt="Proximity example" />
+				</section>
+
+				<!-- 8. TYPOGRAPHY -->
+				<section>
+					<section class="img-focus">
+						<h2>Typography Has a Personality</h2>
+						<p class="subtitle">The font you pick says something before a word is read.</p>
+						<img class="framework" src="image-6.png" alt="Typography personality examples" />
+					</section>
+					<section class="img-focus">
+						<h2>Bad Typography</h2>
+						<p class="subtitle muted">Hard to read · No hierarchy · Wrong personality</p>
+						<img class="framework" src="image-7.png" alt="Bad typography website example" />
+					</section>
+					<section class="img-focus">
+						<h2>Good Typography</h2>
+						<p class="subtitle">Clear · Consistent · Matches the brand</p>
+						<img class="framework" src="image-8.png" alt="Good typography website example" />
+					</section>
+				</section>
+
+				<!-- 9. BRAND GUIDELINES -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Brand Guidelines</h2>
+						<p class="muted">The rules that keep a brand looking like itself everywhere. ↓</p>
+					</section>
+					<section>
+						<h3>Definition</h3>
+						<p class="left"><strong>Brand guidelines</strong> (or a brand style guide) are the documented rules for how a brand looks, sounds, and feels across every touchpoint.</p>
+						<ul class="tight small left">
+							<li><strong>Logo</strong> — approved versions, sizes, and clear space</li>
+							<li><strong>Color palette</strong> — exact hex / RGB / CMYK values</li>
+							<li><strong>Typography</strong> — approved fonts and hierarchy</li>
+							<li><strong>Tone of voice</strong> — how the brand writes and speaks</li>
+							<li><strong>Imagery</strong> — style, mood, and subject matter of photos</li>
+						</ul>
+					</section>
+					<section class="img-focus">
+						<h2>Brand Guidelines Example</h2>
+						<img class="framework" src="image-9.png" alt="Brand guidelines example" />
+					</section>
+					<section>
+						<h3>Netflix Brand Guidelines</h3>
+						<p class="left">Netflix is one of the best examples of a globally consistent brand:</p>
+						<div class="cols">
+							<div class="card">
+								<h4>Logo</h4>
+								<p class="small">The red "N" is never stretched, rotated, or recolored. Always on black or white.</p>
+							</div>
+							<div class="card">
+								<h4>Color</h4>
+								<p class="small">Netflix Red (#E50914) is used globally — instantly recognizable on any device or billboard.</p>
+							</div>
+						</div>
+						<p class="small muted" style="margin-top: 0.6em;">Even at the smallest size on a phone screen, you know it's Netflix — that's the power of brand guidelines.</p>
+					</section>
+				</section>
+
+				<!-- 10. IMAGE OVERLAY -->
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #dcefff, #ffffff)">
+						<h2>Image Overlay</h2>
+						<p class="muted">A technique that makes text readable on any photo. ↓</p>
+					</section>
+					<section class="img-focus">
+						<h2>Image Overlay</h2>
+						<div class="cols" style="align-items: center; gap: 1em;">
+							<div>
+								<img class="framework" src="image-10.png" alt="Image overlay example 1" style="width:100%; max-height: 65vh;" />
+							</div>
+							<div>
+								<img class="framework" src="image-11.png" alt="Image overlay example 2" style="width:100%; max-height: 65vh;" />
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- 11. COMPARE WEBSITES -->
+				<section>
+					<h2>Compare These Websites</h2>
+					<div class="cols">
+						<div class="card cons">
+							<h4>Coach Salinas</h4>
+							<p class="small">coachsalinasmathtutor.com</p>
+							<p class="smaller muted">What design principles are missing?</p>
+						</div>
+						<div class="card pros">
+							<h4>Clear Lake Tutor</h4>
+							<p class="small">clearlaketutor.com</p>
+							<p class="smaller muted">What does it do well?</p>
+						</div>
+					</div>
+					<div class="activity" style="margin-top: 0.8em;">
+						<p><span class="timer">⏱ 10 min</span> Open both sites. Use what you've learned today — hierarchy, alignment, color, typography — to compare them.</p>
+					</div>
+				</section>
+
+				<!-- 12. CLOSING -->
+				<section data-background-gradient="linear-gradient(to bottom, #c2e8ff, #ffffff)">
+					<h2>That's Day 2</h2>
+					<p class="lead">Know your genius. Design with intention.</p>
+					<p class="left">
+						<strong>Looking ahead:</strong> we'll start applying these principles directly to real projects — websites, content, and marketing.
+					</p>
+					<p class="muted">Good design is a skill. Practice it every day.</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="dist/plugin/notes.js"></script>
+		<script src="dist/plugin/markdown.js"></script>
+		<script src="dist/plugin/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
