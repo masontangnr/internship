@@ -13,7 +13,9 @@ Title Slide: Working Genius and Design
 6. It all starts with alignment & Grid
    1. Definition
    2. Pictures of good alignment of a website
+   ![alt text](image-14.png)
    3. Picture of bad alignment of a website
+   ![alt text](image-15.png)
 7. Color Theory
   1. What is color theory for a website
   2. Give examples of how different colors can change the tone of the website
