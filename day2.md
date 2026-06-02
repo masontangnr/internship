@@ -5,6 +5,7 @@ Title Slide: Working Genius and Design
 2. What is good UI/UX design
   1. Good design is when you don't notice it
   2. Definition of good UI/UX design on a website
+  ![alt text](image-16.png)
 3. Visual Hiearchy- definition
 4. Example of good visual hiearchy website with photo
   ![alt text](image-12.png)
@@ -13,7 +14,7 @@ Title Slide: Working Genius and Design
 6. It all starts with alignment & Grid
    1. Definition
    2. Pictures of good alignment of a website
-   ![alt text](image-14.png)
+   ![alt text](image-17.png)
    3. Picture of bad alignment of a website
    ![alt text](image-15.png)
 7. Color Theory
