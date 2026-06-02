@@ -58,3 +58,4 @@
 14. Trello
 	1. Show the khanban board and explain
 15. Henry presentation
+![alt text](image-18.png)
